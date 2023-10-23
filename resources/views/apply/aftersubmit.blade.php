@@ -11,7 +11,7 @@
     </div>
     @endif
     <div class="panel panel-default" style="border-top-color: #e74c3c;">
-      <div class="panel-heading">Đối tác với OYO.com </div>
+      <div class="panel-heading">Đối tác với TKK.com </div>
       <div class="panel-body">
         {{--
         <p> --}} {{-- {{$request->CompanyName}} - Chúng tôi cảm ơn bạn đã chọn OYO.com làm Đối tác đặt chỗ trực tuyến của bạn.

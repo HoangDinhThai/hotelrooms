@@ -114,7 +114,7 @@
                 <a href="homepage.html" style="color: grey">Trang chủ</a>
                 <span class="glyphicon glyphicon-menu-right" style="font-size: 10px"></span>
                 <a href="search-hotels.html" style="color: grey">
-                    <span class="name-of-location">Đà Nẵng</span>
+                    <span class="name-of-location">Hà Nội</span>
                 </a>
                 <span class="glyphicon glyphicon-menu-right" style="font-size: 10px"></span>
                 <b>YOY <span class="name-of-hotel">Vanda Hotel</span></b>

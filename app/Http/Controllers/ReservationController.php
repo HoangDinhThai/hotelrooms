@@ -7,13 +7,13 @@ use App\Hotel;
 use App\Reservation;
 use App\Room;
 use App\User;
-use Auth;
-use Crypt;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Mail;
 use PDF;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 use App\Role;
 use App\Partner;
 class ReservationController extends Controller

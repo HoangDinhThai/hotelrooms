@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2" style="margin-top: 69px;">
       <div class="panel panel-default" style="border-top-color: #e74c3c;">
-          <div class="panel-heading">Đối tác với OYO.com</div>
+          <div class="panel-heading">Đối tác với TKK.com</div>
           <div class="panel-body">
 <!-- List All the Hotels belonging to the Signed in partner , Linking to the Hotel Dashboard of each Hotel -->
       <div class="list-group">

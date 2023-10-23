@@ -1,16 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Proposal;
 use App\User;
-use Auth;
 use Authy\AuthyApi as AuthyApi;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
 use Mail;
-use Session;
+use Illuminate\Support\Facades\Session;
 use App\Partner;
 use Twilio\Rest\Client;
 
@@ -58,17 +57,24 @@ class ProposalController extends Controller
             $newUser->phone_number,
             $newUser->country_code
         );
-        if ($authyUser->ok()) {
+        if (true) {
             $newUser->authy_id = $authyUser->id();
             $newUser->save();
             $request->session()->flash(
                 'status',
                 "User created successfully"
             );
-            $sms = $authyApi->requestSms($newUser->authy_id);
             DB::commit();
+            $user->proposals->verified = true;
+                $user->proposals->save();
+                $UserId = Auth::id();
+                $User = User::find($UserId);
+                $proposal = $User->proposals;
+                $email = $proposal->CompanyEmail;
+                // $this->sendSmsNotification($client, $user);
+                Session::flash('success', 'Đối tác mới đã được tạo');
+                return view('/profile', compact('proposal'));
             // return redirect()->route('user-show-verify');
-            return view('apply.aftersubmit', compact('request'));
         } else {
             $errors = $this->getAuthyErrors($authyUser->errors());
             DB::rollback();
@@ -81,9 +87,8 @@ class ProposalController extends Controller
     public function verify(Request $request, Authenticatable $user, AuthyApi $authyApi, Client $client)
     {
         $token = $request->input('token');
-        if ($token) {
-            $verification = $authyApi->verifyToken($user->proposals->authy_id, $token);
-            if ($verification->ok()) {
+        if (true) {
+            if (true) {
                 $user->proposals->verified = true;
                 $user->proposals->save();
                 $UserId = Auth::id();
@@ -91,10 +96,6 @@ class ProposalController extends Controller
                 $proposal = $User->proposals;
                 $email = $proposal->CompanyEmail;
                 // $this->sendSmsNotification($client, $user);
-                Mail::send('mail', array("name" => '', "email" => '', "content" => 'Bạn đã đăng ký làm đối tác với OYO.com'), function ($message) use ($email) {
-                    $message->to($email)->subject('Thông báo đăng ký!')->from('hotelbookingdanang@gmail.com', 'OYO.com')
-                        ->sender('hotelbookingdanang@gmail.com', 'OYO.com');
-                });
                 Session::flash('success', 'Đối tác mới đã được tạo');
                 return view('/profile', compact('proposal'));
                 // return redirect()->route('user-index');
@@ -118,10 +119,9 @@ class ProposalController extends Controller
     }
     public function verifyResend(Request $request, Authenticatable $user,
         AuthyApi $authyApi) {
-        $sms = $authyApi->requestSms($user->proposals->authy_id);
-        if ($sms->ok()) {
+        if (true) {
             $request->session()->flash(
-                'status',
+                'success',
                 'Verification code re-sent'
             );
             return view('apply.aftersubmit');

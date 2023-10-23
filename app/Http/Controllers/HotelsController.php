@@ -8,7 +8,7 @@ use App\Reservation;
 use App\User;
 use App\Facility;
 use Mail;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HotelsController extends Controller
@@ -117,7 +117,6 @@ class HotelsController extends Controller
             } else if ($Rating >= 20) {
                 $starPath = "/images/2star.png";
             } else {
-
                 $starPath = "/images/1star.png";
             }
 
@@ -195,8 +194,8 @@ class HotelsController extends Controller
         $Partner = $hotel->partner;
         $fas = $hotel->facilitys()->get();
         $facilities = Facility::get();
-        $array = ['Long Biên','Hoàng Mai', 'Hà Đông', 'Hoàn Kiếm', 'Ba Đình', 'Nam Từ Liêm',
-        'Cầu Giấy', 'Tây Hồ'];
+        $array = ['Hoàn Kiếm', 'Đống Đa', 'Ba Đình', 'Hai Bà Trưng', 'Hoàng Mai', 'Thanh Xuân', 
+        'Long Biên', 'Nam Từ Liêm', 'Bắc Từ Liêm', 'Tây Hồ', 'Cầu Giấy', 'Hà Đông'];
         $quancam = $hotel->County;
         $Photos = $hotel->photos->shift();
         return view('partners.edithotel', compact('hotel', 'Partner', 'Photos','array','facilities','fas','quancam'));

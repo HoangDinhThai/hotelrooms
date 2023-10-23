@@ -1,5 +1,16 @@
 <?php
-
+use App\Http\Controllers\ChartsController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HotelPhotosController;
+use App\Http\Controllers\HotelsController;
+use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ProposalController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\RoomsController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 /*|--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -8,24 +19,31 @@
 Route::get('/search', function () {
     return view('search');
 })->name('HomePage');
+
 Route::get('/mail', function () {
     return view('mail');
 })->name('mail');
+
 Route::get('/paypal', function () {
     return view('hotels.paypal');
 });
+
 Route::post('/user/verify',
     ['uses' => 'ProposalController@verify', 'as' => 'user-verify', ]
 );
+
 Route::post(
     '/user/verify/resend',
     ['uses' => 'ProposalController@verifyResend',
      'middleware' => 'auth',
      'as' => 'user-verify-resend']
 );
+
 Route::get('hotel/location=long+biên', 'PartnerController@countyhc');
 Route::get('hotel/location=hoàng+mai', 'PartnerController@countyst');
 Route::get('hotel/location=hà+đông', 'PartnerController@countylc');
+Route::get('hotel/location=hoàn+kiếm', 'PartnerController@countyhk');
+
 // Advanced Search
 Route::get('/search', function () {
     return view('search');

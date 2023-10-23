@@ -6,7 +6,7 @@ use App\Partner;
 use App\Proposal;
 use App\Role;
 use App\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {

@@ -31,8 +31,8 @@ class PartnerController extends Controller
     public function addHotel(Partner $partner)
     {
         $facilities =Facility::pluck('name','id')->all();
-        $array = ['Long Biên','Hoàng Mai', 'Hà Đông', 'Hoàn Kiếm', 'Ba Đình', 'Nam Từ Liêm',
-        'Cầu Giấy', 'Tây Hồ'];
+        $array = ['Hoàn Kiếm', 'Đống Đa', 'Ba Đình', 'Hai Bà Trưng', 'Hoàng Mai', 'Thanh Xuân', 
+        'Long Biên', 'Nam Từ Liêm', 'Bắc Từ Liêm', 'Tây Hồ', 'Cầu Giấy', 'Hà Đông'];
         return view('partners.addhotel', compact('partner','array','facilities'));
     }
 
@@ -63,6 +63,14 @@ class PartnerController extends Controller
     public function countylc()
     {
             $Hotels = Hotel::where('County','Hà Đông')
+            ->get();        
+        return view('hotels.allhotels', compact('Hotels'));
+
+    }
+
+    public function countyhk()
+    {
+            $Hotels = Hotel::where('County','Hoàn Kiếm')
             ->get();        
         return view('hotels.allhotels', compact('Hotels'));
 

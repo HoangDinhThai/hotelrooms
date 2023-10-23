@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers; 
-
+namespace App\Http\Controllers;
 use App\Hotel; 
 use App\Partner; 
 use App\Reservation; 
-use Carbon\Carbon; 
-use Charts; 
+use Carbon\Carbon;
+use ConsoleTVs\Charts\Facades\Charts;
 use DB; 
 //County
 class ChartsController extends Controller {
@@ -16,10 +15,8 @@ public function index(Partner $partner) {
         $Hotels = Hotel::where('partner_id', '=', $PartnerId)->get();
         $HotelId = $Hotels->pluck('id');
         // calculates the total earnings and the earnings made in the current month.
-        $TotalEarnings = Reservation::where('hotel_id', $HotelId)->sum('totalPrice');
-        $MonthlyEarnings = Reservation::where('hotel_id', $HotelId)
-            ->where('created_at', '>=', Carbon::now()->startOfMonth())
-            ->sum('totalPrice');
+        $TotalEarnings = Reservation::where('statuspayment', 0)->sum('totalPrice');
+        $MonthlyEarnings = Reservation::where('statuspayment', 0)->sum('totalPrice');
         //Returns a list of countries that the partners hotels are located in and the number of hotels in each Country.
         // $GetCountries = DB::table('hotels')->where('partner_id', '=', $PartnerId)
         //     ->select('County')

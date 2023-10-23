@@ -81,7 +81,7 @@
             <div class="row" style="width: 80%; margin: 0 auto; text-align: center;  color: rgb(70,68,68)">
                 <!--<div class="col-xs-2 col-sm-2 col-md-2">-->
                 <div class="col-sm-2 col-md-2">
-                    <p class="info">Điều hòa nhiệt độ</p>
+                    <p class="info">Điều hòa</p>
                     <!--do co' class="img-responsive" nen ko the? canh vao` center-->
                     <img class="img-responsive" src="../img/homepage/IMG_49949.svg" />
                 </div>
@@ -120,11 +120,11 @@
             <div class="container" >
                 <div class="grid">
                     <figure class="effect-chico">
-                        <img src="../img/homepage/promotion_3.jpg" width="600px" height="400px" alt="img15" />
+                        <img src="../img/homepage/promotion_3.jpg" width="550px" height="200px" alt="img15" />
                         <figcaption>
                             <!--<strong>YOY <span class="txt-name-location">ĐÀ NẴNG</span></strong>-->
-                            <h3 style="margin-top: 20%">
-                                <span class="txt-name-location" name="County" value="Long Biên">Quận Long
+                            <h3>
+                                <span class="txt-name-location" name="County" value="long+biên">Quận Long
                                     Biên</span><!--Value của quận-->
                             </h3>
                             <a href="hotel/location=long+biên"></a><!--link bấm vào trỏ ra-->
@@ -137,7 +137,7 @@
                         <img src="../img/homepage/promotion_2.jpg" width="550px" height="200px" alt="img04" />
                         <figcaption>
                             <h3>
-                                <span class="txt-name-location" name="County" value="Hoàng Mai">Quận Hoàng
+                                <span class="txt-name-location" name="County" value="hoàng+mai">Quận Hoàng
                                     Mai</span>
                             </h3>
                             <a href="hotel/location=hoàng+mai"></a>
@@ -148,9 +148,19 @@
                         <img src="../img/homepage/promotion_1.jpg" width="550px" height="200px" alt="img04" />
                         <figcaption>
                             <h3>
-                                <span class="txt-name-location" name="County" value="Hà Đông">Quận Hà Đông</span>
+                                <span class="txt-name-location" name="County" value="hà+đông">Quận Hà Đông</span>
                             </h3>
                             <a href="hotel/location=hà+đông"></a>
+                            <!--<a href="#">View more</a>-->
+                        </figcaption>
+                    </figure>
+                    <figure class="effect-chico">
+                        <img src="../img/homepage/promotion_1.jpg" width="550px" height="200px" alt="img04" />
+                        <figcaption>
+                            <h3>
+                                <span class="txt-name-location" name="County" value="hoàn+kiếm">Quận Hoàn Kiếm</span>
+                            </h3>
+                            <a href="hotel/location=hoàn+kiếm"></a>
                             <!--<a href="#">View more</a>-->
                         </figcaption>
                     </figure>

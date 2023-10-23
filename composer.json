@@ -6,13 +6,14 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "barryvdh/laravel-dompdf": "^0.8.0",
-        "consoletvs/charts": "3.*",
-        "laravel/framework": "5.3.*",
-        "stripe/stripe-php": "5.*",
-        "twilio/sdk": "^5.0",
         "authy/php": "~2.4",
-        "laravelcollective/html":"^5.2.0"
+        "barryvdh/laravel-dompdf": "^0.8.0",
+        "consoletvs/charts": "^6.6",
+        "laravel/framework": "5.3.*",
+        "laravelcollective/html": "^5.2.0",
+        "nesbot/carbon": "^1.39",
+        "stripe/stripe-php": "5.*",
+        "twilio/sdk": "^5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -52,7 +53,10 @@
     },
     "config": {
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
     },
     "load": {
       "files":["app/helpers.php"]

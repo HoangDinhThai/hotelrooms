@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Hotel;
 use App\Review;
-use Auth;
 use Illuminate\Http\Request;
 
 class ReviewsController extends Controller

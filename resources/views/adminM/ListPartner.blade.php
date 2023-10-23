@@ -3,7 +3,7 @@
 <div class="">
   <div class="col-md-12" style="margin-top: 30px;">
     <div class="panel panel-default" style="border-top-color: #e74c3c;">
-      <div class="panel-heading">Tất cả đối tác with OYO.com</div>
+      <div class="panel-heading">Tất cả đối tác with TKK.com</div>
       <!-- Displays a list of all the partners of Check-In.com and displays a Remove Button next to each -->
       {{-- @foreach ($Partners as $Partner)
       <li class="list-group-item text-center">
